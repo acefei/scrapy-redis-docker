@@ -10,7 +10,7 @@ class ToScrapeSpiderXPath(RedisCrawlSpider):
     """ This class is copy from https://github.com/scrapy/quotesbot/blob/master/quotesbot/spiders/toscrape-xpath.py
     """
     
-    name = 'spcrapy_redis_demo'
+    name = 'scrapy_redis_demo'
     # [Diff] Waiting redis lpush start_urls
     redis_key = '{0}:start_urls'.format(name)
 

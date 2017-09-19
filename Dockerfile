@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
 WORKDIR /usr/src/app
 
-COPY spider_redis_demo/ ./
+COPY scrapy_redis_demo/ ./
 
 ENTRYPOINT ["scrapy"]
-CMD ["crawl", "spider_redis_demo"]
+CMD ["crawl", "scrapy_redis_demo"]
