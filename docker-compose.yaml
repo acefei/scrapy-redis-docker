@@ -3,6 +3,8 @@ version: '3'
 services:
   scraper:
     build: .
+    volumes:
+        ./scrapy_redis_demo:/usr/src/app
     depends_on:
       - redis
     restart: always

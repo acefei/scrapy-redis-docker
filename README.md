@@ -29,3 +29,7 @@ $ docker exec -it 6617e72e3048 /bin/bash
 root@6617e72e3048:/data# redis-cli lpush scrapy_redis_demo:start_urls http://quotes.toscrape.com
 (integer) 1
 ```
+
+### 参考
+[使用 Docker Compose 配置开发环境](https://coyee.com/article/compare/11003-setting-up-your-development-environment-with-docker-compose)
+[Python分布式爬虫打造搜索引擎Scrapy精讲—将bloomfilter(布隆过滤器)集成到scrapy-redis中](http://www.cnblogs.com/adc8868/p/7442306.html)
