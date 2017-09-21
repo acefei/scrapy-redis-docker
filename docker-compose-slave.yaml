@@ -4,5 +4,4 @@ services:
   scraper:
     build: .
     volumes:
-        ./scrapy_redis_demo:/usr/src/app
-    restart: always
+        - ./scrapy_redis_demo:/usr/src/app

@@ -24,9 +24,12 @@ ITEM_PIPELINES = {
   'scrapy_redis.pipelines.RedisPipeline': 400,
 }
 
+# host should be set to the link name that specified in docker-compose.yaml
+REDIS_HOST = 'redis'
+REDIS_PORT = 6379
 # Specify your redis uri
 # the uri scheme syntax: http://www.iana.org/assignments/uri-schemes/prov/redis 
-REDIS_URL = 'redis://172.16.100.62:6379'
+#REDIS_URL = 'redis://172.16.100.62:6379'
 
 # }
 ##################################
@@ -44,7 +47,8 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.618   # 618 ms of delay
+# DOWNLOAD_DELAY = 15
+
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -56,11 +60,8 @@ DOWNLOAD_DELAY = 0.618   # 618 ms of delay
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-DEFAULT_REQUEST_HEADERS = {
-   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-   'Accept-Language': 'zh-CN,zh;q=0.8',
-   'User-Agent': 'User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.-13112.113 Safari/537.36'
-}
+#DEFAULT_REQUEST_HEADERS = {
+#}
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
@@ -88,11 +89,11 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-#AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY = 60
+AUTOTHROTTLE_MAX_DELAY = 60
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
