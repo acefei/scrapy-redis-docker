@@ -3,6 +3,7 @@
 import scrapy
 from scrapy.spiders import Rule
 from scrapy_redis.spiders import RedisCrawlSpider
+#from scrapy_redis_demo.scrapy_redis.spiders import RedisCrawlSpider
 
 
 # [Diff] inherited by RedisCrawlSpider

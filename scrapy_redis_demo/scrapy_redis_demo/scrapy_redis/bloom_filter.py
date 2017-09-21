@@ -10,10 +10,6 @@ k: 使用的hash函数的个数
 p: False Positive的比率
 
 设计和应用布隆过滤器的方法:http://blog.csdn.net/zq602316498/article/details/40660235
-
-@author: Acefei
-@file: bloom_filter.py
-@time: 17-9-20 下午3:33
 """
 import math
 import mmh3
@@ -90,18 +86,3 @@ class BloomFilter(object):
                 exist = exist & self.bitset[hash]
         return exist
 
-
-if __name__ == "__main__":
-    pool = redis.ConnectionPool(host='172.16.100.62', port=6379)
-    conn = redis.StrictRedis(connection_pool=pool)
-
-
-    start = time.time()
-    bf = BloomFilter(redis_conn=conn)
-    bf.add('test')
-    bf.add('fsest1')
-    print(bf.is_exist('qest'))
-    print(bf.is_exist('testdsad'))
-    print(bf.is_exist('test'))
-    end = time.time()
-    print(end-start)

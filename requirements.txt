@@ -1,2 +1,4 @@
-scrapy-redis==0.6.8
 scrapy==1.4.0
+scrapy-redis==0.6.8
+BitVector==3.4.7
+mmh3
