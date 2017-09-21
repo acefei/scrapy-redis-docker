@@ -2,14 +2,16 @@ version: '3'
 
 services:
   scraper:
+    container_name: scraper
     build: .
     volumes:
       - ./scrapy_redis_demo:/usr/src/app
-    links:
-      - redis
+    # I just want connect redis server by host ip, not redis hostname.
+    network_mode: "host"
     depends_on:
       - redis
   redis:
+    container_name: redis
     image: redis
     ports:
       - "6379:6379"

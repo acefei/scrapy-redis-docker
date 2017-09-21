@@ -24,9 +24,13 @@ ITEM_PIPELINES = {
   'scrapy_redis.pipelines.RedisPipeline': 400,
 }
 
-# host should be set to the link name that specified in docker-compose.yaml
-REDIS_HOST = 'redis'
+# if u add 'network_mode: "host"' in scraper service in docker-compose.yaml
+# use host ip to access redis server
+REDIS_HOST = '172.16.100.62'
+# else use redis hostname to access redis server
+#REDIS_HOST = 'redis'
 REDIS_PORT = 6379
+
 # Specify your redis uri
 # the uri scheme syntax: http://www.iana.org/assignments/uri-schemes/prov/redis 
 #REDIS_URL = 'redis://172.16.100.62:6379'

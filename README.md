@@ -18,18 +18,11 @@ docker-compose up -d
 ```
 
 ### 喂食
+redis是定义在docker-compose.yaml的container name
 ```
-# 找到redis container id
-$ docker ps
-CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS                         PORTS                                              NAMES
-81182b061b7d        scrapyredisdocker_scraper   "scrapy crawl scra..."   55 seconds ago      Restarting (1) 6 seconds ago                                                      scrapyredisdocker_scraper_1
-6617e72e3048        redis                       "docker-entrypoint..."   56 seconds ago      Up 55 seconds                  0.0.0.0:6379->6379/tcp                             scrapyredisdocker_redis_1
+docker exec -it redis redis-cli lpush scrapy_redis_demo:start_urls http://quotes.toscrape.com
+```
 
-# 进入redis container，执行redis-cli lpush
-$ docker exec -it 6617e72e3048 /bin/bash
-root@6617e72e3048:/data# redis-cli lpush scrapy_redis_demo:start_urls http://quotes.toscrape.com
-(integer) 1
-```
 
 ### 参考
 [使用 Docker Compose 配置开发环境](https://coyee.com/article/compare/11003-setting-up-your-development-environment-with-docker-compose)
