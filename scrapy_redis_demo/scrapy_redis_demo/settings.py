@@ -18,6 +18,7 @@ NEWSPIDER_MODULE = 'scrapy_redis_demo.spiders'
 # Configuration for scrapy-redis {
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
 SCHEDULER_PERSIST = True
 
 ITEM_PIPELINES = {
