@@ -1,6 +1,7 @@
 
 
 
+
 本文创建了一个Scrapy-Redis+Docker模板
 
 ### 从Scrapy到Scrapy-Redis，需要哪些文件做了更改
@@ -32,3 +33,5 @@ docker exec -it redis redis-cli lpush scrapy_redis_demo:start_urls http://quotes
 [Python分布式爬虫打造搜索引擎Scrapy精讲—将bloomfilter(布隆过滤器)集成到scrapy-redis中](http://www.cnblogs.com/adc8868/p/7442306.html)
 
 [how to filter duplicate requests based on url in scrapy](https://stackoverflow.com/questions/12553117/how-to-filter-duplicate-requests-based-on-url-in-scrapy?answertab=votes#tab-top)
+
+[测试http请求头](https://httpbin.org)
