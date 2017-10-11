@@ -35,3 +35,5 @@ docker exec -it redis redis-cli lpush scrapy_redis_demo:start_urls http://quotes
 [how to filter duplicate requests based on url in scrapy](https://stackoverflow.com/questions/12553117/how-to-filter-duplicate-requests-based-on-url-in-scrapy?answertab=votes#tab-top)
 
 [测试http请求头](https://httpbin.org)
+
+[Python爬虫框架Scrapy教程(2)—动态可配置](http://www.code123.cc/1432.html)
